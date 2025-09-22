@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+
+  <div id="game-container" class="container">
+
+    <!-- Start Screen -->
+    <div id="start-screen" class="start-screen">
+      <h1 class="wlc">Welcome to the Quiz!</h1>
+      <p>Let's check how well you know CIT!</p>
+      <div class="input-group">
+        <label for="category-select" class="label">Select a Category:</label>
+        <select id="category-select">
+          <option value="Tech">Tech</option>
+          <option value="Non-Tech">Non-Tech</option>
+          <option value="Guest">Guest</option>
+          <option value="Funny">Funny</option>
+        </select>
+      </div>
+      <button id="start-button">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="quiz-screen hidden">
+      <div class="header">
+        <div class="number-of-questions">Question <span id="question-number">1</span> of 5</div>
+      </div>
+      <div id="quiz-content">
+        <h2 id="question-text">Question will appear here.</h2>
+        <div id="options-container" class="options-container"></div>
+      </div>
+      <button id="next-button">Next</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="results-screen" class="results-screen hidden">
+      <h2 class="heading">Completed our Quiz!</h2>
+      <p class="summary">You Scored: <span id="final-score">0</span></p>
+      <form>
+        <label for="name"><b>Name:</b></label>
+        <input type="text" id="enter_player_name" placeholder="Enter your name" class="input-field" maxlength="15">
+      </form>
+      <div class="button-container">
+        <button class="btn btn-submit">Submit</button>
+        <button class="btn btn-back">Go Back</button>
+      </div>
+    </div>
+
+    <!-- Leaderboard -->
+    <div id="leaderboard-modal" class="modal hidden">
+      <div class="modal-content">
+        <h1 class="leaderboard-title">Leaderboard</h1>
+        <ol id="leaderboard-list" class="leaderboard-list"></ol>
+        <button id="close-leaderboard-btn" class="close-btn">Close</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- AUDIO FILES -->
+  <audio id="correct-sound" src="correct.mp3" preload="auto"></audio>
+  <audio id="wrong-sound" src="wrong.mp3" preload="auto"></audio>
+  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+
+  <!--  Background music added properly -->
+  <audio id="background-music" src="quiz-background-loop-thinking-news-275636.mp3" preload="auto" loop></audio>
+
+  <!-- JS FILE -->
+  <script src="quizz.js"></script>
+</body>
+</html>
